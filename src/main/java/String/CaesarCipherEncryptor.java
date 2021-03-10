@@ -18,7 +18,7 @@ public class CaesarCipherEncryptor {
     }
     
     public static char getNewLetter(char letter, int key){
-        int newLetterCode = letter + key;
+        int newLetterCode = letter + key; //x:120+2, y:121+2 z:122+2
         return newLetterCode <= 122 ? (char) newLetterCode : (char) (96 + newLetterCode % 122);
     }
     
