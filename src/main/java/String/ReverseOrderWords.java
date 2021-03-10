@@ -27,13 +27,39 @@ public class ReverseOrderWords {
         }
         return result;
     }
+    
+    static String reverseWordsinString(String s) {
+        ArrayList<String> words = new ArrayList<String>();
+        int startIndex = 0;
+        
+        for (int i = 0; i < s.length(); i++) {
+            char letter = s.charAt(i);
+            
+            if (letter == ' ') {
+                words.add(s.substring(startIndex, i));
+                startIndex = i;
+            } else if (s.charAt(startIndex) == ' '){
+                words.add(" ");
+                startIndex = i;
+            }//end else if
+        }//end for
+        
+        words.add(s.substring(startIndex));
+        
+        Collections.reverse(words);
+        return String.join("", words);
+        
+    }
 
     public static void main(String[] args) {
-        
-        System.out.println(reverseWords("I love coding very much"));
+      
+        System.out.println(reverseWords("words, separated, by, commas"));
+            System.out.println(reverseWords("1 12 23 34 56"));
+        System.out.println(reverseWords("..H,, hello 678"));
                  
         System.out.println(reverseWords_passing_array("I love coding".split(" ")));
         
+        System.out.println(reverseWordsinString("I love coding very much"));
        
 //        String sentence[] = "I love coding".split(" ");     
 //        String reverse = "";

@@ -44,7 +44,7 @@ public class SmallestDifference {
         int[] arrayTwo = {26, 134, 135, 15, 17};
         int[] sp = new int[2];
         sp = smallestDifference(arrayOne, arrayTwo);
-        System.out.print(Arrays.toString(sp) + " "); 
+        System.out.print(Arrays.toString(sp) + " "); //26, 28
     }
     
 }
