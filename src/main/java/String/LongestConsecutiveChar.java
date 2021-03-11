@@ -15,7 +15,7 @@ public class LongestConsecutiveChar {
         int max_count = 0, current_count = 0;
         char current_char = ' ', prev_char = ' ', max_char = ' ';
         for (int i = 0; i < str.length(); i++) {
-            current_char = str.charAt(i); //10+1 =11 
+            current_char = str.charAt(i); 
             if (prev_char == current_char) current_count += 1;
             else current_count = 1;
             
