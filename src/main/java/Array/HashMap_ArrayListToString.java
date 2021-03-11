@@ -30,31 +30,35 @@ public class HashMap_ArrayListToString {
     public static String winnerTeam(ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results){
         String CurrentBestTeam = "";
         HashMap<String, Integer> scores = new HashMap<String, Integer>();
-        scores.put(CurrentBestTeam, 0);
-        int Home_Team_Won = 1;
+        scores.put(CurrentBestTeam, 0); // default hashmap 
+        int Home_Team_Won = 1; // 1: Hometeam won, 0:Awayteam won from results = [0, 0 , 0, 1, 1] 
         for (int i = 0; i < competitions.size(); i++) {
-            ArrayList<String> competition = competitions.get(i);
-            int result = results.get(i); // [0, 0, 1] 1: Home 0:Away
+            ArrayList<String> competition = competitions.get(i); // [LA, SF], [SF, NY], [NY, LA], [LA, NY], [LA, SF]
+            int result = results.get(i); // [0], [0], [0], [1], [1]
             
-            String homeTeam = competition.get(0);
-            String awayTeam = competition.get(1);
+            String homeTeam = competition.get(0); // LA - SF - NY - LA - LA
+            String awayTeam = competition.get(1); // SF - NY - LA - NY - SF
             
-            String winningTeam = (result == Home_Team_Won) ? homeTeam : awayTeam;
+            //result 0 == 1 false goes to AwayTeam won
+            String winningTeam = (result == Home_Team_Won) ? homeTeam : awayTeam; 
             
-            scoreUpdate(winningTeam, 3, scores); // C#
-            
+            scoreUpdate(winningTeam, 3, scores); // (SF, 3) (NY, 3) (LA, 3) (LA, 3)(LA, 3)
+           
             if (scores.get(winningTeam) > scores.get(CurrentBestTeam)) {
                 CurrentBestTeam = winningTeam;
+         
             }//end if
         }//end for
+        
+        System.out.println("Points: " + scores.get(CurrentBestTeam)); //9 points
         
         return CurrentBestTeam;
     }//
     public static void scoreUpdate(String team, int points, HashMap<String, Integer> scores){
         if (!scores.containsKey(team)){
-            scores.put(team, 0);
+            scores.put(team, 0); //  (SF, 3) (NY, 3) (LA, 3)
         }
-        scores.put(team, scores.get(team) + points);
+        scores.put(team, scores.get(team) + points); //(LA, 3 + 3) - (LA, 6 + 3)
     }
     
 }
