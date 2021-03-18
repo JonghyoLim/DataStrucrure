@@ -7,10 +7,11 @@ public class FindCelebrity {
 
     public static void main(String[] args) {
         //Time O(N)
-    int[][] M = {{0, 0, 1, 0}, 
-                 {0, 0, 1, 0},
-                 {0, 0, 0, 0},
-                 {0, 0, 1, 0}};
+    int[][] M = {{0, 1, 1, 0, 1}, 
+                 {1, 0, 0, 1, 1},
+                 {1, 1, 0, 1, 1},
+                 {1, 0, 1, 0, 1},
+                 {0, 0, 0, 0, 0}};
     System.out.println("Celebrity ID: " + FindCelebrityID(M, 4));      
     }
     
