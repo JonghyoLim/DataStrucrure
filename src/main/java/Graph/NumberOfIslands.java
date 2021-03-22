@@ -11,6 +11,7 @@ public class NumberOfIslands {
                             {'1', '1', '0', '0', '0'},
                             {'0', '0', '1', '0', '0'},
                             {'0', '0', '0', '1', '1'}};
+        
         System.out.println("Number of Islands: " + numOfIslands(islands));
         
     }
@@ -38,6 +39,5 @@ public class NumberOfIslands {
        BreadthFirstSearch(grid, i - 1, j); //down
        BreadthFirstSearch(grid, i, j - 1); //left
        BreadthFirstSearch(grid, i, j + 1); //right
-       
    }
 }
