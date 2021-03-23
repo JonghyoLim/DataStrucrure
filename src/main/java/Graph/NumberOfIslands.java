@@ -35,8 +35,8 @@ public class NumberOfIslands {
            return;
        
        grid[i][j] = '0';
-       BreadthFirstSearch(grid, i + 1, j); //up
-       BreadthFirstSearch(grid, i - 1, j); //down
+       BreadthFirstSearch(grid, i - 1, j); //up
+       BreadthFirstSearch(grid, i + 1, j); //down
        BreadthFirstSearch(grid, i, j - 1); //left
        BreadthFirstSearch(grid, i, j + 1); //right
    }
