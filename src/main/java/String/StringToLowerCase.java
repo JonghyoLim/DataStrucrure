@@ -11,6 +11,7 @@ public class StringToLowerCase {
     }
     
     static String toLowerCase(String s){
+        //Each char stores into charArray()
         String result = "";
         for (char c : s.toCharArray()){
             if (Character.isUpperCase(c)){
