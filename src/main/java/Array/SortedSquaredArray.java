@@ -22,15 +22,18 @@ public class SortedSquaredArray {
     
     static int[] sortedSquaredArrayV3(int[] a) {
         int[] sortedArray = new int[a.length];
-        int left = 0, right = a.length - 1;  //left = 1 , right = 5
+        int left = 0, right = a.length - 1; 
+        int resultPointer = a.length - 1;
+        
         while(left <= right) {
-            if (Math.abs(a[left]) > Math.abs(a[right])) {
-                sortedArray[right] = (int) Math.pow(a[left], 2);
+            if (Math.abs(a[left]) > a[right]) {
+                sortedArray[resultPointer] = (int) Math.pow(a[left], 2);
                 left++; //1
             } else {
-                sortedArray[right - 1] = (int) Math.pow(a[right], 2);
+                sortedArray[resultPointer] = (int) Math.pow(a[right], 2);
                 right--;//4
             }
+            resultPointer--;
         }
         return sortedArray;
     }
