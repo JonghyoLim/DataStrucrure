@@ -9,21 +9,21 @@ public class RansomNote {
     
     public static void main(String[] args) {
         String[] mn = scanner.nextLine().split(" ");
-        int m = Integer.parseInt(mn[0]); //give me one grand today night
-        int n = Integer.parseInt(mn[1]); //give one grand today
+        int m = Integer.parseInt(mn[0]);//6 
+        int n = Integer.parseInt(mn[1]);//4 
         
         String[] magazine = new String[m];
-        String[] magazineWords = scanner.nextLine().split(" ");
+        String[] magazineWords = scanner.nextLine().split(" ");//[give me one grand today night]
         for (int i = 0; i < m; i++) {
-            String magazineWord = magazineWords[i];
-            magazine[i] = magazineWord;
+            String magazineWord = magazineWords[i];//give //me //one //grand //today //night
+            magazine[i] = magazineWord;//[give] [me] [one] [grand] [today] [night]
         }
         
-        String[] note = new String[n];
-        String[] noteWords = scanner.nextLine().split(" ");
+        String[] note = new String[n];//4
+        String[] noteWords = scanner.nextLine().split(" ");//[give one grand today]
         for (int i = 0; i < n; i++) {
-            String noteWord = noteWords[i];
-            note[i] = noteWord;
+            String noteWord = noteWords[i];//give //one //grand //today 
+            note[i] = noteWord; //[give] [one] [grand] [today] 
         }
         
         checkMagazine(magazine, note);
