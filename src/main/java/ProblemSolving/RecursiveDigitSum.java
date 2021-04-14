@@ -16,24 +16,22 @@ public class RecursiveDigitSum {
     }
     
     static int superDigit(String n, int k) {
-        //n = '9875', k = 4 then p = 9875 9875 9875 9875
-        //9+8+7+5= 29 * 4 = 116
-        // f(116)= 6 + f(11)// 1 + f(1) // 1+f(0)
-        //1+1+6 = 8 return 8 when only one digit
+        //n = '148', k = 4 
+        //1+4+8= f(13) = 4 * 3 = 12
+        // f(12)= 2 + f(1)// 1 + f(0) = 3
         int sum = 0;
         for (int i = 0; i < n.length(); i++) {
-            sum += Integer.parseInt(n.charAt(i) + ""); //9+8+7+5=29
+            sum += Integer.parseInt(n.charAt(i) + ""); //1+4+8=13
         }
-        sum *=  k;//29*4=116  
-        return  recursiveHelper(sum);
-        //n = n.chars().mapToLong(Character::getNumericValue).sum() * k + "";//36+32+28+20=116
-        //return (n.length() > 1) ? superDigit(n, 1) : Character.getNumericValue(n.charAt(0));
+        
+        int final_sum = recursiveHelper(sum) * k; //f(13) 4*3 = 12
+        return (final_sum > 10) ? recursiveHelper(final_sum) : final_sum;
     }//end superDigit method
     
     private static int recursiveHelper(int n) {
-        //n =116 // 6+1+1 = 8  
-        if (n < 10) return n;     
-        return n % 10 + recursiveHelper(n/10);//6+f(11)// 1+f(1) // 1+f(0)        
+        //n =13
+        if (n < 10) return n;
+        return n % 10 + recursiveHelper(n/10);//3+f(1)// 1+f(0) return 4        
     }
     
 }
