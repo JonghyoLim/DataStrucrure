@@ -24,7 +24,7 @@ public class GenerateSentence {
             letterCounts.put(letter, letterCounts.get(letter) - 1);
         }
         
-        return true;
+        return true;//true
     }
     
     
