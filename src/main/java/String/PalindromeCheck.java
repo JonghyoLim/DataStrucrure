@@ -39,26 +39,21 @@ public class PalindromeCheck {
         return true;
     }
     
+    //O(nm) m space, n recursion tree
     public static boolean isPalindromeV3(String str, int i) {
         int j = str.length() - 1 - i;
         return i >= j ? true : str.charAt(i) == str.charAt(j) && isPalindromeV3(str, i + 1);
          
 
     }
-    
-    
-    
-    
-    
+   
     public static boolean isPalindromeV4(String str) {
-       
+    
         return recursiveChecker(str, 0);
-         
-
     }
     
     public static boolean recursiveChecker(String str, int i) {
-        int j = str.length() - 1 - i;
+        int j = str.length() - 1 - i;//[0,10], [1,9][2,8][3,7][4,6][5]
         return i >= j ? true : str.charAt(i) == str.charAt(j) && recursiveChecker(str, i + 1);
     }
 }

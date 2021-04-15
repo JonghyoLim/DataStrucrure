@@ -6,11 +6,11 @@ import java.util.*;
 public class PalPartiotioningMinCuts {
         
     public static int palPartioningMinCuts(String str) {
-        // abbamadamn
+        // abbamadamn -> abba madam n return=2
         boolean[][] palindromes = new boolean[str.length()][str.length()];
         for (int i = 0; i <str.length(); i++) {
             for (int j = i; j < str.length(); j++) {
-                palindromes[i][j] = isPal(str.substring(i, j + 1)); //[0,0]= T, []
+                palindromes[i][j] = isPal(str.substring(i, j + 1)); //[0,0]= T
             } //end for j
         } //end for i 
         
