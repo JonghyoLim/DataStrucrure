@@ -7,7 +7,9 @@ public class FirstNonRepeatingCharacter {
     
     public static char firstNonRepeatingCharacter(String str){
         HashMap<Character, Integer> char_counts = new HashMap();
-        // abacabad  --> c
+        // aaabccc //a:3 b:1 c:3
+        // abcbad  //a:2 b:2 c:1 d:1
+        // abacabad //a:4 b:2 c:1 d:1 --> c
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             if (char_counts.containsKey(c)) {
@@ -17,6 +19,7 @@ public class FirstNonRepeatingCharacter {
             }
         }
         
+        //Find first HashMap value is : 1 then return char
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             if (char_counts.get(c) == 1) return c;
@@ -25,9 +28,7 @@ public class FirstNonRepeatingCharacter {
     }
 
     public static void main(String[] args) {
-        // aaabccc   --> b
-        // abcbad    --> c
-        // abacabad  --> c
+       
         System.out.println(firstNonRepeatingCharacter("aaacccpddddd"));
     }
     
