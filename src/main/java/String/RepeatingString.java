@@ -7,14 +7,8 @@ public class RepeatingString {
 
     private static final Scanner scanner = new Scanner(System.in);
     
-    public static void main(String[] args) {
-        //Find letter 'a's in the first n letters
-        String s = scanner.nextLine();
-        long n = scanner.nextLong();
-        System.out.println("Repeating 'a' character: " + repeatedString(s, n));
-    }
-    
-    static long repeatedString(String s, long n) {
+        static long repeatedString(String s, long n) {
+        //n=14
         //a b c a c | a b c a c | a b c a = 6
         long stringRepeat = n / s.length(); //14/5 = 2;
         int reminder =(int)(n % s.length());//14%5 = 4
@@ -26,15 +20,25 @@ public class RepeatingString {
             }
         }
         
-        Long total = found * stringRepeat;
+        Long total = found * stringRepeat; //found a: 2*2 = 4
         
-        if (reminder == 0) return total;
+        if (reminder == 0) return total;// 4
         else {
-            String parts = s.substring(0, reminder);
+            //a b c a c 
+            String parts = s.substring(0, reminder);//abcd
             for (char c : parts.toCharArray()){
                 if (c == 'a') total++;
             }
         }
         return total;
     }
+    
+    public static void main(String[] args) {
+        //Find letter 'a's in the first n letters
+        String s = scanner.nextLine();
+        long n = scanner.nextLong();
+        System.out.println("Repeating 'a' character: " + repeatedString(s, n));
+    }
+    
+
 }
