@@ -5,7 +5,15 @@ import java.util.*;
 
 public class ReverseOrderWords {
     
-    //pssing String
+    static String reversedString(String myName) {
+        String result = "";
+        for (int i = myName.length()-1; i>=0; i--){
+            result += myName.charAt(i);
+        }
+        return result;
+    }
+    
+    //passing String
     static String reverseWords(String sentence) {
       
         String s[] = sentence.split(" ");
@@ -52,14 +60,14 @@ public class ReverseOrderWords {
     }
 
     public static void main(String[] args) {
-      
-        System.out.println(reverseWords("words, separated, by, commas"));
-            System.out.println(reverseWords("1 12 23 34 56"));
-        System.out.println(reverseWords("..H,, hello 678"));
+//        System.out.println(reversedString("jonghyolim"));
+//        System.out.println(reverseWords("words, separated, by, commas"));
+//            System.out.println(reverseWords("1 12 23 34 56"));
+//        System.out.println(reverseWords("..H,, hello 678"));
                  
         System.out.println(reverseWords_passing_array("I love coding".split(" ")));
         
-        System.out.println(reverseWordsinString("I love coding very much"));
+//        System.out.println(reverseWordsinString("I love coding very much"));
        
 //        String sentence[] = "I love coding".split(" ");     
 //        String reverse = "";
