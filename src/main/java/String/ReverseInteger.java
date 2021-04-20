@@ -25,7 +25,7 @@ public class ReverseInteger {
     public static void main(String[] args) {
         
         //int n = 1,534,236,469; // return 9,646,324,351 = 0
-        int n = 1534236461;//1,646,324,351
+        int n = 1534236469;//1,646,324,351
         System.out.println(reverseNum(n)); //9,646,324,351 = 0
     }
 
