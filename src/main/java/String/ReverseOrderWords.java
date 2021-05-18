@@ -6,22 +6,24 @@ import java.util.*;
 public class ReverseOrderWords {
     
     static String reversedString(String myName) {
+        
+        //jonghyo lim
         String result = "";
         for (int i = myName.length()-1; i>=0; i--){
             result += myName.charAt(i);
         }
-        return result;
+        return result;//mil oyhgnoj
     }
     
     //passing String
     static String reverseWords(String sentence) {
-      
+        //vs code
         String s[] = sentence.split(" ");
         String result = "";
         for (int i = s.length - 1; i >= 0; i--) {
             result += s[i] + " ";
         }
-        return result;
+        return result;//code vs
         
     }
     
@@ -33,13 +35,23 @@ public class ReverseOrderWords {
         for (int i = s.length - 1; i >= 0; i--) {
             result += s[i] + " ";
         }
-        return result;
+        return result;// coding love I
     }
     
-    static String reverseWordsinString(String s) {
+    static String reverseWords_passing_array_SubS(String[] s) {
+        
+        String reverse = "";
+         for (int i = s.length - 1; i >=0; i--) {
+            reverse += s[i] + " ";
+        }
+        
+        return (reverse.substring(7, reverse.length() - 0)); //love I
+    }
+    
+    static String reverseWords_ArrayList(String s) {
         ArrayList<String> words = new ArrayList<String>();
         int startIndex = 0;
-        
+        //i love coding very much
         for (int i = 0; i < s.length(); i++) {
             char letter = s.charAt(i);
             
@@ -55,29 +67,22 @@ public class ReverseOrderWords {
         words.add(s.substring(startIndex));
         
         Collections.reverse(words);
-        return String.join("", words);
+        return String.join("", words);//much very coding love I
         
     }
 
     public static void main(String[] args) {
-//        System.out.println(reversedString("jonghyolim"));
-//        System.out.println(reverseWords("words, separated, by, commas"));
-//            System.out.println(reverseWords("1 12 23 34 56"));
-//        System.out.println(reverseWords("..H,, hello 678"));
-                 
+        System.out.println(reversedString("jonghyo lim"));
+        System.out.println(reverseWords("vs code"));
+        System.out.println(reverseWords("1 12 23 34 56"));
+        System.out.println(reverseWords("..H,, hello 678"));
         System.out.println(reverseWords_passing_array("I love coding".split(" ")));
-        
-//        System.out.println(reverseWordsinString("I love coding very much"));
+        System.out.println(reverseWords_passing_array_SubS("I love coding".split(" ")));          
+
+        System.out.println(reverseWords_ArrayList("I love coding very much"));
        
-//        String sentence[] = "I love coding".split(" ");     
-//        String reverse = "";
-//        
-//        for (int i = sentence.length - 1; i >=0; i--) {
-//            reverse += sentence[i] + " ";
-//        }
-//        
-//        System.out.println(reverse.substring(0, reverse.length() - 0));
-//        System.out.println(reverse);
+
+ 
 
     }
     
