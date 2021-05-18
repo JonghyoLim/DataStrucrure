@@ -7,15 +7,12 @@ public class TwoStrings {
     
     private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        int q = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        for (int i = 0; i < q; i++) {
-            String s1 = scanner.nextLine();
-            String s2 = scanner.nextLine();
+            String s1 = scanner.nextLine(); //hellojava
+            String s2 = scanner.nextLine(); //hijavascript
             String result = twoStrings(s1, s2);
             System.out.println("Result: " + result);
-        }
+            
     }
     
     static String twoStrings(String s1, String s2) {
@@ -23,15 +20,18 @@ public class TwoStrings {
         HashSet<Character> s2_chars = new HashSet();
         
         for (int i = 0; i < s1.length(); i++) {
-            s1_chars.add(s1.charAt(i)); //h i
+            s1_chars.add(s1.charAt(i)); //[h e l o j a v]
         }
+
         for (int i = 0; i < s2.length(); i++) {
-            s2_chars.add(s2.charAt(i)); //e h i
+            s2_chars.add(s2.charAt(i)); //[h i j a v s c r p t]
         }
+ 
         
-        s1_chars.retainAll(s2_chars);//s1 only has 'h'
+        s1_chars.retainAll(s2_chars);// [h j a v] 
+        System.out.println("S1: " + s1_chars);
         if (!s1_chars.isEmpty()) {
-            return "YES";
+            return "YES"; //s1 retains [h j a v] 
         } else {
             return "NO";
         }
